@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- CONFIGURAÇÕES INICIAIS DA PÁGINA -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/2585351.png" type="image/x-icon">
+    <!-- TÍTULO QUE APARECE NA ABA DO NAVEGADOR -->
+    <title>Elas na Computação</title>
+
+    <style>
+        /* =====================================================
+           CONFIGURAÇÕES GERAIS DO SITE
+           Define margens, espaçamentos e o tamanho dos elementos
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* CONFIGURAÇÃO DO CORPO DA PÁGINA */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f3f8;
+            color: #222;
+        }
+
+
+        /* =====================================================
+           CABEÇALHO DO SITE
+           Parte superior com o nome do site e o menu
+        ===================================================== */
+
+        header {
+            background-color: #6b438f;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* NOME "ELAS NA COMPUTAÇÃO" NO CABEÇALHO */
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* LINKS DO MENU DE NAVEGAÇÃO */
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* EFEITO QUANDO PASSAMOS O MOUSE NOS LINKS */
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           SEÇÃO INICIAL
+           Primeira parte do site com título, texto, botão e imagem
+        ===================================================== */
+
+        .inicio {
+            padding: 80px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #e9ddf2;
+        }
+
+        /* ÁREA DO TEXTO DA PÁGINA INICIAL */
+        .inicio-texto {
+            width: 55%;
+        }
+
+        /* TÍTULO PRINCIPAL DA PÁGINA */
+        .inicio h1 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        /* COR DA PALAVRA "COMPUTAÇÃO" */
+        .inicio h1 span {
+            color: #6b438f;
+        }
+
+        /* TEXTO DE APRESENTAÇÃO DO SITE */
+        .inicio p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        /* BOTÕES PRINCIPAIS DO SITE */
+        .botao {
+            background-color: #6b438f;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* IMAGEM DA PRIMEIRA SEÇÃO */
+        .imagem-inicio img {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+
+        /* =====================================================
+           CONFIGURAÇÃO GERAL DAS SEÇÕES
+           Define o espaçamento entre as partes do site
+        ===================================================== */
+
+        section {
+            padding: 60px 8%;
+        }
+
+        /* TÍTULOS DAS SEÇÕES */
+        section h2 {
+            color: #6b438f;
+            margin-bottom: 10px;
+        }
+
+        /* PARÁGRAFOS LOGO ABAIXO DOS TÍTULOS */
+        section>p {
+            margin-bottom: 30px;
+        }
+
+
+        /* =====================================================
+           FILTRO DAS MULHERES
+           Botões para filtrar as personagens por período
+        ===================================================== */
+
+        /* ÁREA ONDE FICAM OS BOTÕES DE FILTRO */
+        .filtros {
+            margin-bottom: 20px;
+        }
+
+        /* BOTÕES "TODAS", "1800" E "1900" */
+        .filtros button {
+            padding: 8px 15px;
+            margin-right: 5px;
+            background-color: white;
+            border: 1px solid #6b438f;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* EFEITO DOS BOTÕES DE FILTRO AO PASSAR O MOUSE */
+        .filtros button:hover {
+            background-color: #6b438f;
+            color: white;
+        }
+
+
+        /* =====================================================
+           CARDS DAS MULHERES
+           Cada card apresenta uma personagem da computação
+        ===================================================== */
+
+        /* ORGANIZAÇÃO DOS CARDS EM COLUNAS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* FUNDO E FORMATO DE CADA CARD */
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px #00000020;
+        }
+
+        /* PARTE SUPERIOR DO CARD COM AS INICIAIS */
+        .card-imagem {
+            height: 150px;
+            background-color: #8b65aa;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        /* PARTE DO CARD ONDE FICAM AS INFORMAÇÕES */
+        .card-conteudo {
+            padding: 20px;
+        }
+
+        /* NOME DA PERSONAGEM NO CARD */
+        .card h3 {
+            margin: 10px 0;
+            color: #42126e;
+        }
+
+        /* TEXTO SOBRE A PERSONAGEM */
+        .card p {
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* BOTÃO "SAIBA MAIS" DOS CARDS */
+        .card button {
+            margin-top: 15px;
+            background: none;
+            border: none;
+            color: #6b438f;
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           SEÇÃO "MULHERES NA TECNOLOGIA"
+           Apresenta diferentes áreas e grupos relacionados à tecnologia
+        ===================================================== */
+
+        /* FUNDO ROXO CLARO DA SEÇÃO */
+        .categorias {
+            background-color: #e9ddf2;
+        }
+
+        /* ORGANIZAÇÃO DAS CATEGORIAS EM COLUNAS */
+        .categorias-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* CADA CAIXA DE CATEGORIA */
+        .categoria {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 10px 10px #32044d5e;
+        }
+
+        /* TÍTULO DE CADA CATEGORIA */
+        .categoria h3 {
+            margin-bottom: 10px;
+            color: #42126e;
+
+        }
+
+        /* TEXTO DE CADA CATEGORIA */
+        .categoria p {
+            color: #666666;
+            line-height: 1.4;
+        }
+
+
+        /* =====================================================
+           LINHA DO TEMPO
+           Mostra acontecimentos importantes em ordem histórica
+        ===================================================== */
+
+        /* ORGANIZAÇÃO DOS EVENTOS DA TIMELINE */
+        .timeline {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* CADA EVENTO DA LINHA DO TEMPO */
+        .evento {
+            background-color: white;
+            padding: 20px;
+            border-left: 4px solid #552580;
+            flex: 1;
+        }
+
+        /* ANO DE CADA EVENTO */
+        .evento strong {
+            color: #6b438f;
+        }
+
+        /* TÍTULO DE CADA EVENTO */
+        .evento h3 {
+            margin: 10px 0;
+        }
+
+
+        /* =====================================================
+           SEÇÃO DO QUIZ
+           Área onde o usuário pode iniciar o quiz
+        ===================================================== */
+
+        /* FUNDO E ALINHAMENTO DA ÁREA DO QUIZ */
+        .quiz {
+            text-align: center;
+            background-color: #6b438f;
+            color: white;
+        }
+
+        /* TÍTULO DO QUIZ */
+        .quiz h2 {
+            color: white;
+        }
+
+        /* TEXTO DE APRESENTAÇÃO DO QUIZ */
+        .quiz p {
+            margin: 20px 0;
+        }
+
+
+        /* =====================================================
+           RODAPÉ
+           Última parte da página com informações do grupo
+        ===================================================== */
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE PARA CELULAR
+           Ajusta o site quando a tela fica menor que 800px
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            /* ORGANIZA O CABEÇALHO NA VERTICAL */
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            /* COLOCA O TEXTO E A IMAGEM DA HOME UM ABAIXO DO OUTRO */
+            .inicio {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            /* TEXTO DA HOME OCUPA TODA A LARGURA */
+            .inicio-texto {
+                width: 100%;
+            }
+
+            /* DEIXA 2 CARDS POR LINHA */
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* DEIXA 2 CATEGORIAS POR LINHA */
+            .categorias-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* COLOCA OS EVENTOS DA TIMELINE UM ABAIXO DO OUTRO */
+            .timeline {
+                flex-direction: column;
+            }
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE PARA CELULARES PEQUENOS
+           Ajusta o site quando a tela fica menor que 500px
+        ===================================================== */
+
+        @media (max-width: 500px) {
+
+            /* DEIXA APENAS 1 CARD POR LINHA */
+            .cards,
+            .categorias-container {
+                grid-template-columns: 1fr;
+            }
+
+            /* DIMINUI O TAMANHO DO TÍTULO PRINCIPAL */
+            .inicio h1 {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+         Nome do site e links para navegar pelas seções
+    ===================================================== -->
+
+    <header>
+
+        <!-- NOME DO SITE -->
+        <div class="logo">
+            Elas na Computação
+        </div>
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <nav>
+
+            <!-- LINK PARA A PÁGINA INICIAL -->
+            <a href="#inicio">Início</a>
+
+            <!-- LINK PARA OS CARDS DAS MULHERES -->
+            <a href="#mulheres">Mulheres</a>
+
+            <!-- LINK PARA A LINHA DO TEMPO -->
+            <a href="#timeline">Timeline</a>
+
+            <!-- LINK PARA O QUIZ -->
+            <a href="#quiz">Quiz</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         SEÇÃO INICIAL / HOME
+         Apresentação principal do projeto
+    ===================================================== -->
+
+    <section class="inicio" id="inicio">
+
+        <!-- ÁREA COM O TÍTULO, TEXTO E BOTÃO -->
+        <div class="inicio-texto">
+
+            <!-- TÍTULO PRINCIPAL -->
+            <h1>
+                Mulheres que mudaram a
+                <span>Computação</span>
+            </h1>
+
+            <!-- TEXTO DE APRESENTAÇÃO -->
+            <p>
+                Conheça mulheres importantes para a história
+                da computação e descubra suas contribuições
+                para a tecnologia.
+            </p>
+
+            <!-- BOTÃO QUE LEVA PARA A SEÇÃO DAS MULHERES -->
+            <a href="#mulheres" class="botao">
+                Clique aqui para conhecer
+            </a>
+
+        </div>
+
+
+        <!-- IMAGEM PRINCIPAL DA PÁGINA -->
+        <div class="imagem-inicio">
+
+            <!-- IMAGEM DA MULHER NA COMPUTAÇÃO -->
+            <img src="img/Sem-nome-800-x-600-px-1024x768.png" alt="Mulher na computação">
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SEÇÃO DAS MULHERES
+         Apresenta as principais pioneiras da computação
+    ===================================================== -->
+
+    <section id="mulheres">
+
+        <!-- TÍTULO DA SEÇÃO -->
+        <h2>Pioneiras da Computação</h2>
+
+        <!-- EXPLICAÇÃO DA SEÇÃO -->
+        <p>
+            Conheça algumas mulheres que fizeram parte
+            da história da computação.
+        </p>
+
+
+        <!-- BOTÕES PARA FILTRAR AS PERSONAGENS POR PERÍODO -->
+        <div class="filtros">
+
+            <!-- MOSTRA TODAS AS MULHERES -->
+            <button onclick="filtrar('todos')">
+                Todas
+            </button>
+
+            <!-- MOSTRA MULHERES DO SÉCULO XIX -->
+            <button onclick="filtrar('1800')">
+                1800
+            </button>
+
+            <!-- MOSTRA MULHERES DO SÉCULO XX -->
+            <button onclick="filtrar('1900')">
+                1900
+            </button>
+
+        </div>
+
+
+        <!-- ÁREA ONDE FICAM TODOS OS CARDS -->
+        <div class="cards">
+
+
+            <!-- =================================================
+                 CARD DA ADA LOVELACE
+            ================================================== -->
+
+            <div class="card" data-periodo="1800">
+
+                <!-- INICIAIS DA PERSONAGEM -->
+                <div class="card-imagem">
+                    AL
+                </div>
+
+                <!-- INFORMAÇÕES DA ADA -->
+                <div class="card-conteudo">
+
+                    <!-- ANOS DE VIDA -->
+                    <small>1815 - 1852</small>
+
+                    <!-- NOME -->
+                    <h3>Ada Lovelace</h3>
+
+                    <!-- DESCRIÇÃO -->
+                    <p>
+                        Uma das primeiras pessoas a criar
+                        um algoritmo para uma máquina.
+                    </p>
+
+                    <!-- BOTÃO PARA MOSTRAR MAIS INFORMAÇÕES -->
+                    <button onclick="info('Ada Lovelace')">
+                        Saiba mais
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- =================================================
+                 CARD DA GRACE HOPPER
+            ================================================== -->
+
+            <div class="card" data-periodo="1900">
+
+                <!-- INICIAIS DA PERSONAGEM -->
+                <div class="card-imagem">
+                    GH
+                </div>
+
+                <!-- INFORMAÇÕES DA GRACE -->
+                <div class="card-conteudo">
+
+                    <!-- ANOS DE VIDA -->
+                    <small>1906 - 1992</small>
+
+                    <!-- NOME -->
+                    <h3>Grace Hopper</h3>
+
+                    <!-- DESCRIÇÃO -->
+                    <p>
+                        Cientista da computação que contribuiu
+                        para o desenvolvimento de linguagens.
+                    </p>
+
+                    <!-- BOTÃO PARA MOSTRAR MAIS INFORMAÇÕES -->
+                    <button onclick="info('Grace Hopper')">
+                        Saiba mais
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- =================================================
+                 CARD DA KATHERINE JOHNSON
+            ================================================== -->
+
+            <div class="card" data-periodo="1900">
+
+                <!-- INICIAIS DA PERSONAGEM -->
+                <div class="card-imagem">
+                    KJ
+                </div>
+
+                <!-- INFORMAÇÕES DA KATHERINE -->
+                <div class="card-conteudo">
+
+                    <!-- ANOS DE VIDA -->
+                    <small>1918 - 2020</small>
+
+                    <!-- NOME -->
+                    <h3>Katherine Johnson</h3>
+
+                    <!-- DESCRIÇÃO -->
+                    <p>
+                        Matemática que participou de cálculos
+                        importantes para missões espaciais.
+                    </p>
+
+                    <!-- BOTÃO PARA MOSTRAR MAIS INFORMAÇÕES -->
+                    <button onclick="info('Katherine Johnson')">
+                        Saiba mais
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- =================================================
+                 CARD DA MARGARET HAMILTON
+            ================================================== -->
+
+            <div class="card" data-periodo="1900">
+
+                <!-- INICIAIS DA PERSONAGEM -->
+                <div class="card-imagem">
+                    MH
+                </div>
+
+                <!-- INFORMAÇÕES DA MARGARET -->
+                <div class="card-conteudo">
+
+                    <!-- ANO DE NASCIMENTO -->
+                    <small>1936 -</small>
+
+                    <!-- NOME -->
+                    <h3>Margaret Hamilton</h3>
+
+                    <!-- DESCRIÇÃO -->
+                    <p>
+                        Desenvolveu softwares utilizados
+                        nas missões Apollo.
+                    </p>
+
+                    <!-- BOTÃO PARA MOSTRAR MAIS INFORMAÇÕES -->
+                    <button onclick="info('Margaret Hamilton')">
+                        Saiba mais
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SEÇÃO CATEGORIAS
+         Mostra diferentes áreas de atuação das mulheres
+         na tecnologia
+    ===================================================== -->
+
+    <section class="categorias">
+
+        <!-- TÍTULO DA SEÇÃO -->
+        <h2>Mulheres na tecnologia</h2>
+
+        <!-- DESCRIÇÃO DA SEÇÃO -->
+        <p>
+            Conheça diferentes áreas onde mulheres
+            participam da tecnologia.
+        </p>
+
+
+        <!-- CONTAINER COM TODAS AS CATEGORIAS -->
+        <div class="categorias-container">
+
+
+            <!-- CATEGORIA: MULHERES BRASILEIRAS -->
+            <div class="categoria">
+
+                <h3>🇧🇷 🟩🟨</h3>
+
+                <p>
+                    Mulheres brasileiras que se destacam
+                    na área da tecnologia.
+                </p>
+
+            </div>
+
+
+            <!-- CATEGORIA: MULHERES DA GROENLÂNDIA -->
+            <div class="categoria">
+
+                <h3>
+                    🇬🇱 🟥⬜
+                </h3>
+
+                <p>
+                    Mulheres da Groenlândia relacionadas
+                    à tecnologia e ciência.
+                </p>
+
+            </div>
+
+
+            <!-- CATEGORIA: DESENVOLVEDORAS -->
+            <div class="categoria">
+
+                <h3>Desenvolvedoras</h3>
+
+                <p>
+                    Mulheres que trabalham com programação
+                    e desenvolvimento de sistemas.
+                </p>
+
+            </div>
+
+
+            <!-- CATEGORIA: INTELIGÊNCIA ARTIFICIAL -->
+            <div class="categoria">
+
+                <h3>Inteligência Artificial</h3>
+
+                <p>
+                    Mulheres pesquisadoras que trabalham
+                    com inteligência artificial.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LINHA DO TEMPO
+         Mostra acontecimentos importantes da história
+         das mulheres na computação
+    ===================================================== -->
+
+    <section id="timeline">
+
+        <!-- TÍTULO DA TIMELINE -->
+        <h2>Linha do tempo</h2>
+
+        <!-- DESCRIÇÃO -->
+        <p>
+            Alguns momentos importantes da história.
+        </p>
+
+
+        <!-- CONTAINER COM OS EVENTOS -->
+        <div class="timeline">
+
+
+            <!-- EVENTO: ADA LOVELACE -->
+            <div class="evento">
+
+                <strong>1843</strong>
+
+                <h3>Ada Lovelace</h3>
+
+                <p>
+                    Publicação de um algoritmo
+                    para a Máquina Analítica.
+                </p>
+
+            </div>
+
+
+            <!-- EVENTO: ENIAC -->
+            <div class="evento">
+
+                <strong>1940</strong>
+
+                <h3>ENIAC</h3>
+
+                <p>
+                    Mulheres participaram da programação
+                    do computador ENIAC.
+                </p>
+
+            </div>
+
+
+            <!-- EVENTO: MARGARET HAMILTON -->
+            <div class="evento">
+
+                <strong>1960</strong>
+
+                <h3>Margaret Hamilton</h3>
+
+                <p>
+                    Participação no desenvolvimento
+                    de software para o programa Apollo.
+                </p>
+
+            </div>
+
+
+            <!-- EVENTO: ATUALIDADE -->
+            <div class="evento">
+
+                <strong>Hoje</strong>
+
+                <h3>Mulheres na tecnologia</h3>
+
+                <p>
+                    Mulheres continuam atuando na
+                    ciência e na tecnologia.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SEÇÃO DO QUIZ
+         Área interativa para testar os conhecimentos
+    ===================================================== -->
+
+    <section class="quiz" id="quiz">
+
+        <!-- TÍTULO DO QUIZ -->
+        <h2>Quiz</h2>
+
+        <!-- DESCRIÇÃO DO QUIZ -->
+        <p>
+            Teste seus conhecimentos sobre as mulheres
+            na história da computação.
+        </p>
+
+        <!-- BOTÃO QUE INICIA O QUIZ -->
+        <button class="botao" onclick="quiz()">
+            Começar quiz
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         RODAPÉ
+         Informações finais e integrantes do grupo
+    ===================================================== -->
+
+    <footer>
+
+        <!-- NOME DO PROJETO E ANO -->
+        <p>
+            Elas na Computação - 2026
+        </p>
+
+        <br>
+
+        <!-- NOMES DOS INTEGRANTES DO GRUPO -->
+        <p>
+            João Abila, Melissa, Guilherme Henrique e Riko
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
